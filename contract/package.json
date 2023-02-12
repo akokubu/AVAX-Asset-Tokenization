@@ -18,5 +18,8 @@
     "@chainlink/contracts": "^0.6.1",
     "@openzeppelin/contracts": "^4.8.1",
     "dotenv": "^16.0.3"
+  },
+  "resolutions": {
+    "solc": "0.8.17"
   }
 }
