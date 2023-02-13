@@ -44,6 +44,9 @@ contract FarmNft is ERC721 {
         _safeMint(to, newItemId);
         _tokenIds.increment();
         availableMint--;
+
+        (bool success, ) = (farmerAddress).call{value: msg.value}("");
+        require(success, "Failed to withdraw AVAX");
     }
 
     function tokenURI(uint256 _tokenId)
@@ -85,7 +88,7 @@ contract FarmNft is ERC721 {
 
     function burnNFT() public {
         require(isExpired(), "still available");
-        for (uint256 id = 0; id < _tokenIds.current; id++) {
+        for (uint256 id = 0; id < _tokenIds.current(); id++) {
             _burn(id);
         }
     }
