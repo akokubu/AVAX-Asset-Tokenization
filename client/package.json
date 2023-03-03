@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chainlink/contracts": "^0.6.1",
     "@metamask/providers": "^10.2.1",
     "@next/font": "13.1.6",
     "@types/node": "18.13.0",
